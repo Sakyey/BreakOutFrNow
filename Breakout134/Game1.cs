@@ -11,20 +11,29 @@ namespace Breakout134
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        int score = 0;
+        int counter = 0;
+        int highscore;
+        int lives = 3;
         Texture2D bollen;
         Texture2D padle;
         Texture2D texture;
         Texture2D block;
         Vector2 bollPos;
         Vector2 bollDir;
+        Vector2 scorePos;
+        Rectangle bollRec;
+        Rectangle blockRec;
+        Rectangle padleRec;
+        Rectangle gameOverRec;
 
-        Texture2D[] blockArray;
+        Rectangle[] BlockArray;
 
         MouseState mouseState;
         Vector2 mousePos;
-        Boll boll1;
         Boll boll;
-        
+        Boll boll1;
+        bool resetBall;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -45,10 +54,13 @@ namespace Breakout134
             bollen = Content.Load<Texture2D>("ball_breakout");
             bollPos = new Vector2(50, 50);
             block = Content.Load<Texture2D>("block_breakout");
-
+            blockRec = new Rectangle(0, 0, 50, 25);
             padle = Content.Load<Texture2D>("padle");
+            padleRec = new Rectangle();
             bollDir = new Vector2(5, -5);
-
+            scorePos = new Vector2(50, 50);
+            //bollRec = new Rectangle((Window.ClientBounds.Width)
+            
             // TODO: use this.Content to load your game content here
         }
 
@@ -56,8 +68,8 @@ namespace Breakout134
         {
             //bollPos.X = bollPos.X + bollDir.X;
             //bollPos.Y = bollPos.Y + bollDir.Y;
-
-            boll1.Update();
+            
+            //boll1.Update();
             //boll1.CheckCrash();
             //boll.CheckCrash(padle);
             // TODO: Add your update logic here

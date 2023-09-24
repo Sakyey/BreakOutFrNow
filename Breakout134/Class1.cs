@@ -11,19 +11,19 @@ namespace Breakout134
 {
     public class Boll
     {
-        Texture2D bolltex;
-        Vector2 bollPos;
-        Vector2 bollDir;
-        Rectangle bollRec;
+        public Texture2D bollTex;
+        public Vector2 bollPos;
+        public Vector2 bollDir;
+        public Rectangle bollRec;
         public bool crash;
-        bool changeDir;
-        int maximumX = 800;
-        int maximumY = -600;
-        int minimumX = 0;
-        int minimumY = 0;
-        public Boll(Texture2D bolltex, Vector2 bollPos)
+        public bool changeDir;
+        public int maximumX = 800;
+        public int maximumY = -600;
+        public int minimumX = 0;
+        public int minimumY = 0;
+        public Boll(Texture2D bollTex, Vector2 bollPos)
         {
-            this.bolltex = bolltex;
+            this.bollTex = bollTex;
             this.bollPos = bollPos;
             bollRec = new Rectangle((int)bollPos.X, (int)bollPos.Y, 50, 50);
             crash = false;
